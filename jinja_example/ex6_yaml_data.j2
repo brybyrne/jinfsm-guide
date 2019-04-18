@@ -1,0 +1,10 @@
+{% for interface in interfaces -%}
+ interface {{ interface.name }}
+ description Generated with YAML file {{ file }}
+ ip address {{ interface.ip }} {{ interface.mask }}
+ {% if interface.state == "enabled" -%}
+ no shutdown
+ {% else -%}
+ shutdown
+ {% endif %}
+{% endfor -%}

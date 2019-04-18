@@ -1,0 +1,20 @@
+---
+
+devices:
+  - name: iosxe1
+    mgmt_ip: 10.0.0.1
+    mgmt_user: iosxe1_user
+    mgmt_pass: iosxe1_pass
+    interfaces:
+      - name: GigabitEthernet2
+        state: "shutdown"
+        ip: 192.168.85.1
+        mask: 255.255.255.0
+      - name: GigabitEthernet3
+        state: "enabled"
+        ip: 172.20.100.1
+        mask: 255.255.0.0
+      - name: GigabitEthernet4
+        state: "enabled"
+        ip: 10.20.30.1
+        mask: 255.255.255.0

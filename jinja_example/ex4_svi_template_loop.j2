@@ -1,0 +1,14 @@
+{% for vlan in vlans %}
+
+# Generating Configuration for: {{ vlan.name }}
+
+vlan {{ vlan.vlan_var }}
+ name VLAN_{{ vlan.vlan_var }}
+!
+interface vlan {{ vlan.vlan_var }}
+ description This is the SVI for VLAN {{ vlan.vlan_var }}
+ ip address {{ vlan.ip_var }} {{ vlan.mask_var }}
+
+{% endfor %}
+
+# Config Complete

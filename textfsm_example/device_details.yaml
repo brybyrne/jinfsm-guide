@@ -1,0 +1,17 @@
+---
+env_path: /Users/brybyrne/code/template_work/textfsm_example/ntc-templates/templates/
+
+devices:
+
+  - name: iosxe1
+    device_type: 'cisco_ios'
+    address: '127.0.0.1'
+    username: 'vagrant'
+    password: 'vagrant'
+    ssh_port: 2122
+  - name: iosxe2
+    device_type: 'cisco_ios'
+    address: '127.0.0.1'
+    username: 'vagrant'
+    password: 'vagrant'
+    ssh_port: 2222

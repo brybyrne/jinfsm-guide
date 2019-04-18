@@ -1,0 +1,32 @@
+{% for port in ports -%}
+
+# Generating Configuration for: {{ port.name }}
+{% if port.mode == "access" -%}
+interface {{ port.name }}
+ switchport {{ port.mode }} vlan {{ port.vlan }}
+ spanning-tree portfast
+ {% if port.state == "shutdown" -%}
+ description "Port Shutdown in Data Set"
+ shutdown
+ {% elif port.state == "enabled"-%}
+ description "Configured by NetDevOps Live"
+ no shutdown
+ {% else -%}
+ description "Interface Set as Shutdown Due to Invalid Input"
+ shutdown
+ {% endif -%}
+
+{% elif port.mode == "trunk" -%}
+interface {{ port.name }}
+ switchport mode {{ port.mode }}
+ spanning-tree portfast trunk
+ switchport trunk allowed vlan {{ port.allowed }}
+
+{% else -%}
+interface {{ port.name }}
+ description "Shut Down For Invalid Port Mode"
+ shutdown
+{% endif -%}
+
+### Config Complete ###
+{% endfor -%}
