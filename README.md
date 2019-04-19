@@ -39,7 +39,7 @@ This directory contains examples on using TextFSM to parse through CLI operation
 - device_details.yaml - Used in example 3 to provide session details for opening the SSH session with Netmiko and an environment variable that provides the location of the TextFSM templates.
 - /ntc-template - These are TextFSM templates created by Network to Code.
 
-### Code Desciptions
+### Code Descriptions
 - ex1_ship_output.py - This simple code is designed to read in the output form 'show ip interface brief' and pass it through the TextFSM parser. The show output and the TextFSM templates are explicitly defined in the code.
 - ex2_ship_netmiko.py - In this example rather than feed the parser a text file the code generates the output by using Netmiko to establish a connection, send the show command, and then parse the data into a readable format.
 - ex3_netmiko_sh_ver.py - This example is designed to show Netmiko's built in function that will apply the correct TextFSM template based on the input show command. This requires an environment variable set that tells Netmiko where to find the template files and an Index file that associates the show output with the correct template.
