@@ -2,16 +2,16 @@ ios_xe1 = {
     "address": "127.0.0.1",
     "port": 2122,
     "username": "vagrant",
-    "password": "vagrant"
+    "password": "password"
           }
 
 ios_xe2 = {
     "address": "127.0.0.1",
     "port": 2222,
-    "username": "vagrant",
-    "password": "vagrant"
+    "username": "username",
+    "password": "password"
           }
 
 environment = {
-    "path": "/Users/brybyrne/code/template_work/textfsm_example/ntc-templates/templates/",
+    "path": "path_to_ntc_templates_directory_index_file",
           }
